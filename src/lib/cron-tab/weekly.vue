@@ -1,25 +1,36 @@
 <template>
     <div className="container-fluid">
-        <div className="well well-small row">
-            <div className="span6 col-sm-6">
-                <div className="text_align_left">
-                    <input type="checkbox" value="MON" @change="onCheck" :checked="this.value[5].search('MON') !== -1  ? true : false" />{{$parent.translate('Monday')}}<br/>
-                    <input type="checkbox" value="WED" @change="onCheck" :checked="this.value[5].search('WED') !== -1 ? true : false"  />{{$parent.translate('Wednesday')}}<br/>
-                    <input type="checkbox" value="FRI" @change="onCheck" :checked="this.value[5].search('FRI') !== -1  ? true : false"/>{{$parent.translate('Friday')}}<br/>
-                    <input type="checkbox" value="SUN" @change="onCheck" :checked="this.value[5].search('SUN') !== -1 ? true : false"/>{{$parent.translate('Sunday')}}
+        <div className="well-weekly well-small row">
+            <div className="span6 col-sm-12 d-flex align-items-center mb">
+                <h6 className="font-weight-bold">{{$parent.translate('Allowed Days*')}}</h6>
+                <div className="d-flex align-items-center weeklyBox" >
+                   
+                    <input type="checkbox" value="SUN" @change="onCheck" :checked="this.value[5].search('SUN') !== -1 ? true : false"/>{{$parent.translate('Sun')}}
+                    <input type="checkbox" value="MON" @change="onCheck" :checked="this.value[5].search('MON') !== -1  ? true : false" />{{$parent.translate('Mon')}}<br/>
+                    <input type="checkbox" value="WED" @change="onCheck" :checked="this.value[5].search('WED') !== -1 ? true : false"  />{{$parent.translate('Wed')}}<br/>
+                    <input type="checkbox" value="FRI" @change="onCheck" :checked="this.value[5].search('FRI') !== -1  ? true : false"/>{{$parent.translate('Fri')}}<br/>
+                    <input type="checkbox" value="TUE" @change="onCheck" :checked="this.value[5].search('TUE') !== -1 ? true : false"/>{{$parent.translate('Tuesday')}}<br />
+                    <input type="checkbox" value="THU" @change="onCheck" :checked="this.value[5].search('THU') !== -1 ? true : false"/>{{$parent.translate('Thursday')}}<br />
+                    <input type="checkbox" value="SAT" @change="onCheck" :checked="this.value[5].search('SAT') !== -1 ? true : false"/>{{$parent.translate('Saturday')}}
                 </div>
             </div>
-            <div className="span6 col-sm-6">
-                <div className="text_align_left">
+            <!-- <div className="span6 col-sm-6 ">
+                <div className="text_align_left d-flex">
                     <input type="checkbox" value="TUE" @change="onCheck" :checked="this.value[5].search('TUE') !== -1 ? true : false"/>{{$parent.translate('Tuesday')}}<br />
                     <input type="checkbox" value="THU" @change="onCheck" :checked="this.value[5].search('THU') !== -1 ? true : false"/>{{$parent.translate('Thursday')}}<br />
                     <input type="checkbox" value="SAT" @change="onCheck" :checked="this.value[5].search('SAT') !== -1 ? true : false"/>{{$parent.translate('Saturday')}}
                 </div><br /><br />
-            </div>
+            </div> -->
         </div>
+        <div className="d-flex">
+
+        <h6 className="font-weight-bold w-10">
+
         {{$parent.translate('Start time')}}
+        </h6>
             <Hour :disabled="value[2].indexOf('/') != -1"  @change="onAtHourChange" :value="value[2]" />
             <Minutes :disabled="value[2].indexOf('/') != -1"  @change="onAtMinuteChange" :value="value[1]" />
+        </div>
     </div>
 </template>
 <script>

@@ -1,6 +1,6 @@
 <template>
     <div className="well">   
-        {{$parent.translate('Expression')}} <input type="text" @input="onChange" :value="this.value.toString().replace(/,/g,' ').replace(/!/g, ',')" />
+        {{$parent.translate('Cron Expression *')}} <input type="text" @input="onChange" :value="this.value.toString().replace(/,/g,' ').replace(/!/g, ',')" />
     </div>
 </template>
 <script>

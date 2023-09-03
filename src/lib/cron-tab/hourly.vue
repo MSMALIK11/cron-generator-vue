@@ -1,16 +1,16 @@
 <template>
     <div className="tab-content">              
         <div className="tab-pane active">
-            <div className="well well-small">
+            <div className="mb well-small">
                 <input type="radio" @change="everyHour" :checked="value[2].indexOf('/') != -1" />
                 <span>{{$parent.translate('Every')}}</span>
                 <input :disabled="value[2].indexOf('/') == -1"  type="number" @input="onHourChange" :value="this.value[2].split('/')[1] ? this.value[2].split('/')[1] : ''" :max="24" maxLength="2" />
                 <span>{{$parent.translate('hour(s)')}}</span>
             </div>
-            <div className="well well-small margin-right-0 margin-left-0">
+            <div className="mb well-small margin-right-0 margin-left-0">
             <div className="text_align_right w-100">
                 <input type="radio" @change="atHour" :checked="value[2].indexOf('/') == -1"  />
-                <span className="">{{$parent.translate('At')}}</span> 
+                <span className="">{{$parent.translate('At *')}}</span> 
                 <Hour :disabled="value[2].indexOf('/') != -1"  @change="onAtHourChange" :value="value[2]" />
                 <Minutes :disabled="value[2].indexOf('/') != -1"  @change="onAtMinuteChange" :value="value[1]" />
             </div>

@@ -1,18 +1,20 @@
 <template>
-    <div className="tab-pane" >
-        <div className="well well-small">
-            <input type="radio" @change="everyDay" :checked="value[3].indexOf('/') != -1" />
-            <span>{{$parent.translate('Every')}}</span>
+    <div className="tab-pane">
+        <div className="daily well-small">
+            <!-- <input type="radio" @change="everyDay" :checked="value[3].indexOf('/') != -1" /> -->
+            <span>{{$parent.translate(' Recur Every *')}}</span>
             <input :disabled="value[3].indexOf('/') == -1"  type="number" @input="onDayChange" :value="this.value[3].split('/')[1] ? this.value[3].split('/')[1] :''" :max="31" maxLength="2" />
-            <span>{{$parent.translate('days(s)')}}</span>
+            <span>{{$parent.translate('days')}}</span>
         </div>
-        <div className="well well-small">
+        <!-- <div className="well well-small">
             <input @change="weekDay" type="radio"  name="DailyRadio" :checked="value[3].indexOf('/') == -1"/>
             <span>{{$parent.translate('Every week day')}}</span>
-        </div>
-        <span>{{$parent.translate('Start time')}}</span>
+        </div> -->
+        <div class="daily well-small">
+        <span>{{$parent.translate('Start Time *')}}</span>
             <Hour :disabled="value[2].indexOf('/') != -1"  @change="onAtHourChange" :value="value[2]" />
             <Minutes :disabled="value[2].indexOf('/') != -1"  @change="onAtMinuteChange" :value="value[1]" />
+        </div>
     </div>
 </template>
 <script>

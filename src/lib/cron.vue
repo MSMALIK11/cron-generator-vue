@@ -15,12 +15,12 @@
                 <Monthly v-if="selectedTab == headerValues.MONTHLY" :value="value" @change-val="changeVal"/>
                 <Custom v-if="selectedTab == headerValues.CUSTOM" :value="value" @change-val="changeVal"/>
             </div>
-             <div className="cron-builder-bg" v-if="showResultText">
+             <!-- <div className="cron-builder-bg" v-if="showResultText">
                 {{ getVal() }}
             </div>
             <div v-if="showResultCron" className="cron-builder-bg">
                 {{getCronString(value)}}
-            </div>
+            </div> -->
         </div>
 </template>
 

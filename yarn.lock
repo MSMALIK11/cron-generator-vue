@@ -8927,9 +8927,11 @@ vm-browserify@^1.0.1:
 
 "vue-cron-builder@https://github.com/MSMALIK11/cron-generator-vue":
   version "0.1.6"
-  resolved "https://github.com/MSMALIK11/cron-generator-vue#a35d631582227e2c9d05255bffb8e30d7b8d44d3"
+  resolved "https://github.com/MSMALIK11/cron-generator-vue#5478fce666f1765d20f47eadc4e8e4c8254f0af7"
   dependencies:
+    "@rollup/plugin-buble" "^1.0.2"
     cronstrue "1.92.0"
+    vue-cron-builder "https://github.com/MSMALIK11/cron-generator-vue"
 
 vue-eslint-parser@^7.10.0:
   version "7.11.0"

@@ -1,7 +1,10 @@
 <template>
     <div className="well">   
-        {{$parent.translate('Every')}} <input type="Number" @input="onChange" :value="value[1].split('/')[1]" min="1" max="60" /> 
-        {{$parent.translate('minute(s)')}}
+        {{$parent.translate('Every')}}
+        <select @change="onChange">
+  <option v-for="number in 60" :key="number" :value="number">{{ number }}</option>
+</select>
+{{$parent.translate('Minutes')}}
     </div>
 </template>
 <script>

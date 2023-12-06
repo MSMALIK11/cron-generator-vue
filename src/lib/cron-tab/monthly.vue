@@ -6,7 +6,6 @@
             <input :disabled="value[4] != '1/1'"  type="number" :value="this.value[3]" @input="onDayChange" />
             {{ $parent.translate('of every month(s)') }}
         </div>
-
         <div className="well-monthly well-small">
             <input @change="lastDayOfMonth"  type="radio" value="2" name="DailyRadio" :checked="value[3] == 'L'"/>
             {{$parent.translate('Last day of every month')}}

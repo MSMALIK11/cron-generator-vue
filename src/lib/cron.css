@@ -7,6 +7,7 @@
         background: #f3f2f1;
         min-height: 200px;
 }
+
 .cron_builder_bordering input,
 .cron_builder_bordering select {
     width: 100px;
